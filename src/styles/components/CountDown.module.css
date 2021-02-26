@@ -1,7 +1,7 @@
 .countDownContainer {
     display: flex;
     align-items: center;
-    font-family: 'Rajdhani';
+    font-family: Rajdhani;
     font-weight: 600;
     color: var(--title);
 }
@@ -33,4 +33,25 @@
 .countDownContainer > span {
     font-size: 6.5rem;
     margin: 0 0.5rem;
+}
+
+.startCountDown {
+    width: 100%;
+    height: 5rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--blue);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: background-color .2s;
+}
+
+.startCountDown:hover {
+    background: var(--blue-dark);
 }
