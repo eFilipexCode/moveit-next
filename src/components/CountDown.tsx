@@ -1,7 +1,10 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useContext, useEffect, useState } from 'react';
+import { ChallengesContext } from '../contexts/ChallengeContexts';
 import styles from '../styles/components/CountDown.module.css';
 
 export default function CountDown() {
+    const { startNewChallenge } = useContext(ChallengesContext);
+
     const [time, setTime] = useState(0.1 * 60);
     const [isActive, setIsActive] = useState(false);
     const [hasFinished, setHasFinished] = useState(false);
@@ -32,6 +35,7 @@ export default function CountDown() {
         } else if (isActive && time === 0) {
             setHasFinished(true);
             setIsActive(false);
+            startNewChallenge();
         };
     }, [isActive, time]);
 
